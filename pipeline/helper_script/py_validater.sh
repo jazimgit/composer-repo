@@ -19,8 +19,8 @@ then
      for i in `cat change_py_files.txt`
       do
 	  echo $i
-	  python333 $i
-	  if [ "$?"!=0 ]; then
+	  python $i
+	  if [ "$?" != 0 ]; then
               echo "there is rong something"
 	      exit 1;
 	  fi
