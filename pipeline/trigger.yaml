@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-eEuo'
+  - 'pipefail'
+  - '-c'
+  - |-
+    git clone https://github.com/jazimgit/composer-repo.git
+    cd composer-repo
+    cd pipeline
+    cd helper_script
+    ./py_validater.sh
+
