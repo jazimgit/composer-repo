@@ -16,6 +16,15 @@ echo "####################################"
 if [ "$lines" != 0 ];
 then
      echo "there is change files"
+     for i in `cat change_py_files.txt`
+      do
+	  echo $i
+	  python $i
+	  if [ "$?"!=0 ]; then
+              echo "there is rong something"
+	      exit 1;
+	  fi
+      done
 else 
      echo "no change files are present"
 fi
